@@ -2,16 +2,18 @@
 import 'course.dart';
 
 class Teachers extends Courses {
-  int id;
+  int teacherId;
   String name;
+  List teachersCourses;
   Teachers({
-    required this.id,
+    required this.teacherId,
     required this.name,
-  }) : super(teacherId: 1);
+    required this.teachersCourses,
+  }) : super(courseId: teacherId,courseName: teachersCourses);
 
   void getTeacherData() {
-    if (id == teacherId) {
-      print(courseName.join(', '));
+    if (teacherId == courseId) {
+      print('Id-si $teacherId olan $name muellimin kecdiyi kurslar:${courseName.join(', ')}');
     }
   }
 }
